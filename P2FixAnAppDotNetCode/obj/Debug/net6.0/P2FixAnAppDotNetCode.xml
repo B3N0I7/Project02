@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>P2FixAnAppDotNetCode</name>
+    </assembly>
+    <members>
+        <member name="T:P2FixAnAppDotNetCode.Models.Panier">
+            <summary>
+            La classe Panier
+            </summary>
+        </member>
+        <member name="F:P2FixAnAppDotNetCode.Models.Panier.lignesPanier">
+            <summary>
+            Propriété en lecture seule pour affichage seulement
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.GetListeDesLignesDuPanier">
+            <summary>
+            Retour la liste des lignes du panier
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.AjouterElement(P2FixAnAppDotNetCode.Models.Produit,System.Int32)">
+            <summary>
+            Ajoute un produit dans le panier ou incrémente sa quantité dans le panier si déjà présent
+            </summary>//
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.SupprimerLigne(P2FixAnAppDotNetCode.Models.Produit)">
+            <summary>
+            Supprimer un produit du panier
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.GetValeurTotale">
+            <summary>
+            Récupère la valeur totale du panier
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.GetValeurMoyenne">
+            <summary>
+            Récupère la valeur moyenne du panier
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.TrouveProduitDansLesLignesDuPanier(System.Int32)">
+            <summary>
+            Cherche un produit donné dans le panier et le retourne si trouvé
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.GetLignePanierParIndice(System.Int32)">
+            <summary>
+            Retourne une ligne de panier à partir de son indice
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Panier.Vider">
+            <summary>
+            Vide un panier de tous ses produits
+            </summary>
+        </member>
+        <member name="T:P2FixAnAppDotNetCode.Models.Repositories.CommandeRepository">
+            <summary>
+            La classe qui gère les données des commandes
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Repositories.CommandeRepository.Enregistrer(P2FixAnAppDotNetCode.Models.Commande)">
+            <summary>
+            Enregistre une commande
+            </summary>
+        </member>
+        <member name="T:P2FixAnAppDotNetCode.Models.Repositories.ProduitRepository">
+            <summary>
+            La classe qui gère les données des produits
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Repositories.ProduitRepository.GenereDesProduits">
+            <summary>
+            Génère une liste de produits par défaut
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Repositories.ProduitRepository.GetTousLesProduits">
+            <summary>
+            Récupère tous les produits depuis l'inventaire
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Repositories.ProduitRepository.MetAJourLaQuantiteDunProduit(System.Int32,System.Int32)">
+            <summary>
+            Met à jour le stock d'un produit dans l'inventaire à partir de son id
+            </summary>
+        </member>
+        <member name="T:P2FixAnAppDotNetCode.Models.Services.CommandeService">
+            <summary>
+            Fournit les services pour gérer une commande
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.CommandeService.EnregistreLaCommande(P2FixAnAppDotNetCode.Models.Commande)">
+            <summary>
+            Enregistre une commande
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.CommandeService.MetAJourInventaire">
+            <summary>
+            Met à jour les quantités de produit dans l'inventaire et vide le panier
+            </summary>
+        </member>
+        <member name="T:P2FixAnAppDotNetCode.Models.Services.LangageService">
+            <summary>
+            Fourni des méthodes de services pour gérer la langue de l'application
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.LangageService.ChangeLangageInterfaceUtilisateur(Microsoft.AspNetCore.Http.HttpContext,System.String)">
+            <summary>
+            Positionne la langue de l'interface utilisateur
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.LangageService.SetCulture(System.String)">
+            <summary>
+            Positionne la culture
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.LangageService.MettreAJourLeCookieDeCulture(Microsoft.AspNetCore.Http.HttpContext,System.String)">
+            <summary>
+            Met à jour le cookie de culture
+            </summary>
+        </member>
+        <member name="T:P2FixAnAppDotNetCode.Models.Services.ProduitService">
+            <summary>
+            Cette classe fourni les services pour gérer les produits
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.ProduitService.GetTousLesProduits">
+            <summary>
+            Récupère tous les produits depuis l'inventaire
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.ProduitService.GetProduitParId(System.Int32)">
+            <summary>
+            Récupère un produit depuis l'inventaire à partir de son id
+            </summary>
+        </member>
+        <member name="M:P2FixAnAppDotNetCode.Models.Services.ProduitService.MetAJourLesQuantitesDuPanier(P2FixAnAppDotNetCode.Models.Panier)">
+            <summary>
+            Met à jour les quantités restantes pour chaque produit dans l'inventaire en fonction des quantités commandées
+            </summary>
+        </member>
+    </members>
+</doc>

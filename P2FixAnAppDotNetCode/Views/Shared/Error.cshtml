@@ -1,0 +1,26 @@
+﻿@using P2FixAnAppDotNetCode.Models
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Erreur";
+}
+
+<h1 class="text-danger">Erreur.</h1>
+<h2 class="text-danger">Une erreur s'est produite lors du traitement de la requête.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Basculer dans l'environnement de <strong>Development</strong> affichera des informations plus détaillées à propos de l'erreur.
+</p>
+<p>
+    <strong>L'environnement de Development ne doit pas être activé pour des applications déployées.</strong>
+    Cela peut faire s'afficher des informations sensibles aux utilisateurs finaux.
+    Pour du débogage local, activer l'envionnement de <strong>Development</strong> en positionnant la valeur de la variable d'environnement <strong>ASPNETCORE_ENVIRONMENT</strong> à <strong>Development</strong>
+    et redémarrer l'application.
+</p>

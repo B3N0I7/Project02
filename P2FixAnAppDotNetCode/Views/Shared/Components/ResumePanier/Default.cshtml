@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@using Microsoft.AspNetCore.Localization
+@model P2FixAnAppDotNetCode.Models.Panier
+
+
+@if (Model.Lignes.Count() > 0)
+{
+    <small class="navbar-text">
+        <b>@Localizer["YourCart"]:</b>
+        @Model.Lignes.Sum(x => x.Quantite) item(s)
+        @Model.GetValeurTotale().ToString("c")
+    </small>
+}
+<a class="btn btn-sm btn-light navbar-btn" asp-controller="Panier" asp-action="Index">
+    <i class="fa fa-shopping-cart"></i>
+</a>
+

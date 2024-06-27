@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ActiveDebugProfile>P2FixAnAppDotNetCode</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\A141QT\source\repos\P2_deboguez\P2FixAnAppDotNetCode\Properties\PublishProfiles\P2FixAnAppDotNetCode20230201130151 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <ItemGroup />
+</Project>

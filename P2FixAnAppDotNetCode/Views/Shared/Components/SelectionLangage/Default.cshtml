@@ -1,0 +1,22 @@
+﻿@model P2FixAnAppDotNetCode.Models.ViewModels.LangageViewModel
+
+<form asp-action="ChangerLangueInterfaceUtilisateur" asp-controller="Langage" method="post">
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <label class="col-sm-2">@Localizer["Language"]</label>
+        </div>
+        <div class="col-auto">
+
+            <select asp-for="Langage" class="form-select">
+                <option disabled selected style="font-style:italic">@Localizer["ChangeLanguage"]</option>
+                <option value="English">@Localizer["LanguageEnglish"]</option>
+                <option value="French">@Localizer["LanguageFrench"]</option>
+                <option value="Spanish">@Localizer["LanguageSpanish"]</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-secondary" type="submit">OK</button>
+        </div>
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.Path" />
+    </div>
+</form>

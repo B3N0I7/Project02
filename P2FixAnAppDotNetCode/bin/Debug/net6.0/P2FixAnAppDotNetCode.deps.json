@@ -1,0 +1,34 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "P2FixAnAppDotNetCode/1.0.0": {
+        "runtime": {
+          "P2FixAnAppDotNetCode.dll": {}
+        },
+        "resources": {
+          "en/P2FixAnAppDotNetCode.resources.dll": {
+            "locale": "en"
+          },
+          "es/P2FixAnAppDotNetCode.resources.dll": {
+            "locale": "es"
+          },
+          "fr/P2FixAnAppDotNetCode.resources.dll": {
+            "locale": "fr"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "P2FixAnAppDotNetCode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

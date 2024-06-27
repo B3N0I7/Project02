@@ -1,0 +1,53 @@
+﻿@model P2FixAnAppDotNetCode.Models.Panier
+
+<h2>@Localizer["YourCart"]</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Localizer["Quantity"]</th>
+            <th>@Localizer["Item"]</th>
+            <th class="text-right">@Localizer["Price"]</th>
+            <th class="text-right">@Localizer["Subtotal"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Lignes)
+        {
+            <tr>
+                <td class="text-center">@line.Quantite</td>
+                <td class="text-left">@line.Produit.Nom</td>
+                <td class="text-right">@line.Produit.Prix.ToString("c")</td>
+                <td class="text-right">
+                    @((line.Quantite * line.Produit.Prix).ToString("c"))
+                </td>
+                <td>
+                    <form asp-action="SuppressionDansPanier" method="post">
+                        <input type="hidden" name="id"
+                               value="@line.Produit.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            @Localizer["Remove"]
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">@Localizer["Total"]:</td>
+            <td class="text-right">
+                @Model.GetValeurTotale().ToString("c")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text-right">@Localizer["Average"]:</td>
+            <td class="text-right">
+                @Model.GetValeurMoyenne().ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Produit">@Localizer["ContinueShopping"]</a>
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Commande">@Localizer["Checkout"]</a>
+</div>

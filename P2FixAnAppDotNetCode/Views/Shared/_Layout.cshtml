@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet"
+          asp-href-include="/lib/bootstrap/css/bootstrap.min.css"
+          asp-href-exclude="**/*-reboot*,**/*-grid*" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <title>@ViewData["Title"] - P2FixAnAppDotNetCode</title>
+</head>
+<body>
+    <div class="navbar navbar-dark bg-primary" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Produit">
+                Magasin OpenClassrooms
+            </a>
+            <div class="d-flex text-end">
+                @await Component.InvokeAsync("ResumePanier")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content pt-3">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-8">&copy; 2022 - P2FixAnAppDotNetCode</div>
+                <div class="col-4">
+                    @await Component.InvokeAsync("SelectionLangage")
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
